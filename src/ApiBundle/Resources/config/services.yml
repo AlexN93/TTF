@@ -1,0 +1,8 @@
+parameters:
+    api.mapping.handler.class: ApiBundle\Handler\MappingHandler
+    api.mapping.class: ApiBundle\Entity\Parameters
+
+services:
+    api.mapping.handler:
+        class: '%api.mapping.handler.class%'
+        arguments: ['@doctrine.orm.entity_manager', '%api.mapping.class%', '@form.factory', '@service_container']
